@@ -1,6 +1,7 @@
 import { combineReducers } from "redux";
-import { userLanguage } from "./languages";
+import { pageText } from "./pageText";
+import { userLanguage } from "./userLanguage";
 
-const allReducers = combineReducers({ userLanguage });
+const allReducers = combineReducers({ userLanguage, pageText });
 
 export default allReducers;
