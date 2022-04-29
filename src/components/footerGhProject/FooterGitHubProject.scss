@@ -1,13 +1,12 @@
+@import "../../style/colors.scss";
+
 .app__footer {
-  background: rgb(184, 251, 63);
-  background: radial-gradient(circle, rgba(184, 251, 63, 0.6951155462184874) 0%, rgba(0, 0, 0, 1) 100%);
-  border-top: greenyellow 2px solid;
+  background: radial-gradient(circle, $color-gradient-1 0%, $color-gradient-2 100%);
+  border-top: $color-1 2px solid;
   padding: 0.5rem 0;
 
   width: 100%;
-  //position: -webkit-sticky; /* Safari */
-  position: sticky;
-  bottom: 0;
+  flex-shrink: 0;
 
 
   a {
@@ -17,8 +16,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: white;
-    font-size: 0.6rem;
+    color: $color-text-1;
+    text-shadow: 0 0 30px $color-bg-2;
+    font-size: 0.7rem;
   }
 
   img {

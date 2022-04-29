@@ -1,3 +1,5 @@
+@import "../style/colors.scss";
+
 #buildingPage {
   position: absolute;
   left: 50%;
@@ -8,92 +10,35 @@
 
 
 .app {
-  &__header {
-    position: sticky;
-    top: 0;
-    padding-right: 2rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    border-bottom: greenyellow 2px solid;
-    background: rgb(184, 251, 63);
-    background: radial-gradient(circle, rgba(184, 251, 63, 0.6951155462184874) 0%, rgba(0, 0, 0, 1) 100%);
-
-    .header {
-      &__list {
-        padding: 0;
-        display: flex;
-        flex-wrap: wrap;
-        list-style: none;
-        background: rgba(0, 0, 0, 0.6);
-        border-radius: 3rem;
-        margin: 1rem;
-
-        .list__item {
-          display: flex;
-          align-items: center;
-
-          .item {
-            &__link {
-              color: white;
-              text-decoration: none;
-              padding: 1rem;
-              margin: 0 0.4rem;
-              transition-duration: 500ms;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-image: url("../assets/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
 
 
-              &--active {
-                color: yellow;
-              }
-
-              &:hover {
-                color: greenyellow;
-              }
-            }
-
-            &__separator {
-              font-size: 1.5rem;
-              color: greenyellow;
-            }
-          }
-        }
-      }
-
-      &__btn {
-        &--right {
-          all: unset;
-          cursor: pointer;
-          position: absolute;
-          display: block;
-          right: 1%;
-          top: 50%;
-          transform: translate(-50%, -50%);
-          background: transparent;
-
-
-          img {
-            width: 1.5rem;
-            transition-duration: 500ms;
-
-            &:hover {
-              width: 2rem;
-            }
-          }
-        }
-      }
-    }
-  }
 
 
   &__content {
+    flex: 1 0 auto;
 
     .content__container {
       max-width: 1200px;
       width: 100%;
-      display: block;
-      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      margin: 1rem auto;
+      padding: 4% 3%;
+      background: $color-bg-1;
+      -webkit-box-shadow: 1px 0px 100px 0px $color-shadow;
+      -moz-box-shadow: 1px 0px 100px 0px $color-shadow;
+      box-shadow: 1px 0px 100px 0px $color-shadow;
+      border-radius: 2rem;
+      border: $color-1 1px solid;
+
     }
   }
 

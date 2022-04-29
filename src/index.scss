@@ -1,0 +1,20 @@
+@import "src/style/colors.scss";
+@import "src/style/fonts.scss";
+
+body {
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: $color-bg-2;
+    color: $color-text-1;
+    font-family: $font-common;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

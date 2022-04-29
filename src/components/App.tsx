@@ -13,13 +13,9 @@ import Cv from "../pages/Cv";
 import AboutMe from "../pages/AboutMe";
 import Contact from "../pages/contact";
 import { FooterGitHubProject } from "./footerGhProject/FooterGitHubProject";
+import Navigation from "./nav/Navigation";
 
 function App() {
-  const enum userLanguage {
-    "PL" = 1,
-    "ENG" = 0,
-  }
-
   const dispatch = useDispatch();
   const userLang = useSelector((state: userLang) => state.userLanguage);
   const pageText = useSelector((state: pageTextInterface) => state.pageText);
@@ -52,56 +48,7 @@ function App() {
       ) : (
         <>
           <BrowserRouter>
-            <header className="app__header">
-              <ul className="header__list">
-                {pageText[userLang].nav.map((item: any, index: number) => {
-                  let separator = " / ";
-                  let tempClassName = "item__link";
-                  if (index === 0) {
-                    tempClassName = "item__link item__link--active";
-                  }
-                  if (index === pageText[userLang].nav.length - 1) {
-                    separator = "";
-                  }
-                  return (
-                    <li className="list__item" key={item.name}>
-                      <Link
-                        to={item.page}
-                        className={tempClassName}
-                        onClick={(e) => {
-                          document
-                            .querySelector(".item__link--active")
-                            ?.classList.remove("item__link--active");
-                          const tempElement = e.target as Element;
-                          tempElement.classList.add("item__link--active");
-                        }}
-                      >
-                        {item.name}
-                      </Link>
-                      <span className="item__separator">{separator}</span>
-                    </li>
-                  );
-                })}
-              </ul>
-              <button
-                className="header__btn--right"
-                onClick={() => {
-                  if (userLang === 0) {
-                    dispatch(setUserLanguage(userLanguage.PL));
-                    localStorage.setItem("userLanguage", "1");
-                  } else {
-                    dispatch(setUserLanguage(userLanguage.ENG));
-                    localStorage.setItem("userLanguage", "0");
-                  }
-                }}
-              >
-                {userLang === 1 ? (
-                  <img src={require("../assets/flags/engFlag.png")} alt="" />
-                ) : (
-                  <img src={require("../assets/flags/polFlag.png")} alt="" />
-                )}
-              </button>
-            </header>
+            <Navigation pageText={pageText} userLang={userLang} />
             <main className="app__content">
               <div className="content__container">
                 <Routes>
