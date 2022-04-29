@@ -50,15 +50,13 @@ function App() {
           <BrowserRouter>
             <Navigation pageText={pageText} userLang={userLang} />
             <main className="app__content">
-              <div className="content__container">
-                <Routes>
-                  <Route path="/" element={<Start />} />;
-                  <Route path="/aboutMe" element={<AboutMe />} />;
-                  <Route path="/cv" element={<Cv />} />;
-                  <Route path="/portfolio" element={<Portfolio />} />;
-                  <Route path="/contact" element={<Contact />} />;
-                </Routes>
-              </div>
+              <Routes>
+                <Route path="/" element={<Start />} />;
+                <Route path="/aboutMe" element={<AboutMe />} />;
+                <Route path="/cv" element={<Cv />} />;
+                <Route path="/portfolio" element={<Portfolio />} />;
+                <Route path="/contact" element={<Contact />} />;
+              </Routes>
             </main>
           </BrowserRouter>
           <FooterGitHubProject />

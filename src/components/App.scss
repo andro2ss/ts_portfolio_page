@@ -19,30 +19,30 @@
   background-position: center;
   background-attachment: fixed;
 
+  .content__container {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 1rem auto;
+    padding: 4% 3%;
+    background: $color-bg-1;
+    -webkit-box-shadow: 1px 0px 100px 0px $color-shadow;
+    -moz-box-shadow: 1px 0px 100px 0px $color-shadow;
+    box-shadow: 1px 0px 100px 0px $color-shadow;
+    border-radius: 2rem;
+    border: $color-1 1px solid;
+
+    animation: fadeIn;
+    animation-duration: 1s;
+  }
 
 
 
   &__content {
     flex: 1 0 auto;
-
-    .content__container {
-      max-width: 1200px;
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      margin: 1rem auto;
-      padding: 4% 3%;
-      background: $color-bg-1;
-      -webkit-box-shadow: 1px 0px 100px 0px $color-shadow;
-      -moz-box-shadow: 1px 0px 100px 0px $color-shadow;
-      box-shadow: 1px 0px 100px 0px $color-shadow;
-      border-radius: 2rem;
-      border: $color-1 1px solid;
-
-      animation: fadeIn;
-      animation-duration: 1s;
-
-    }
   }
 
 }
+
+

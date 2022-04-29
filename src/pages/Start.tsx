@@ -2,7 +2,7 @@ import React from "react";
 
 function Start() {
   return (
-    <div className="page">
+    <div className="content__container">
       <br />
       Start page
       <br />

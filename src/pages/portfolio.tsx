@@ -1,7 +1,7 @@
 import React from "react";
 
 function Portfolio() {
-  return <div>projekty</div>;
+  return <div className="content__container">projekty</div>;
 }
 
 export default Portfolio;

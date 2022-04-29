@@ -1,7 +1,7 @@
 import React from "react";
 
 function Cv() {
-  return <div>CV</div>;
+  return <div className="content__container">CV</div>;
 }
 
 export default Cv;
