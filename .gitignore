@@ -5,6 +5,7 @@ src/firebase.js
 firebase.json
 firestore.indexes.json
 firestore.rules
+.firebase
 
 # dependencies
 /node_modules
