@@ -34,12 +34,12 @@
     border: $color-1 1px solid;
 
     animation: fadeIn;
-    animation-duration: 800ms;
+    animation-duration: 600ms;
   }
 
   .animation--exit {
     animation: zoomOut;
-    animation-duration: 500ms;
+    animation-duration: 400ms;
   }
 
   .hide{

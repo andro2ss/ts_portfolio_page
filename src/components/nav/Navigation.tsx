@@ -47,7 +47,7 @@ function Navigation({ pageText, userLang }: any) {
               }
               return (
                 <li className="list__item" key={item.name}>
-                  <button
+                  <div
                     // to={item.page}
                     className={tempClassName}
                     onClick={(e) => {
@@ -55,7 +55,7 @@ function Navigation({ pageText, userLang }: any) {
                     }}
                   >
                     {item.name}
-                  </button>
+                  </div>
                   <span className="item__separator"> / </span>
                 </li>
               );

@@ -73,6 +73,7 @@
     li {
       list-style: none;
       padding: 12px 0;
+      cursor: pointer;
 
       span {
         display: none;
@@ -178,6 +179,8 @@
         .list__item {
           display: flex;
           align-items: center;
+          cursor: pointer;
+
 
           &:last-child {
             .item__separator {

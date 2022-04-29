@@ -1,138 +1,14 @@
 import React from "react";
 
-function Start() {
+function Start({ data }: any) {
   return (
     <div className="content__container">
-      <br />
-      Start page
-      <br />
-      Start page
-      <br />
-      Start page
-      <br />
-      Start page
-      <br />
-      Start page
-      <br />
-      Start page
-      <br />
-      Start page
-      <br />
-      Start page
-      <br />
-      Start page
-      <br />
-      Start page
-      <br />
-      Start page
-      <br />
-      Start page
-      <br />
-      Start page
-      <br />
-      Start page
-      <br />
-      Start page
-      <br />
-      Start page
-      <br />
-      Start page
-      <br />
-      Start page
-      <br />
-      Start page
-      <br />
-      Start page
-      <br />
-      Start page
-      <br />
-      Start page
-      <br />
-      Start page
-      <br />
-      Start page
-      <br />
-      Start page
-      <br />
-      Start page
-      <br /> tak
-      <br /> tak
-      <br /> tak
-      <br /> tak
-      <br /> tak
-      <br /> tak
-      <br /> tak
-      <br /> tak
-      <br /> tak
-      <br /> tak
-      <br /> tak
-      <br /> tak
-      <br /> tak
-      <br /> tak
-      <br /> tak
-      <br /> tak
-      <br /> tak
-      <br /> tak
-      <br /> tak
-      <br /> tak
-      <br /> tak
-      <br /> tak
-      <br /> tak
-      <br /> tak
-      <br /> tak
-      <br /> tak
-      <br /> tak
-      <br /> tak
-      <br /> tak
-      <br /> tak
-      <br /> tak
-      <br /> tak
-      <br /> tak
-      <br /> tak
-      <br /> tak
-      <br /> tak
-      <br /> tak
-      <br /> tak
-      <br /> tak
-      <br /> tak
-      <br /> tak
-      <br /> tak
-      <br /> tak
-      <br /> tak
-      <br /> tak
-      <br /> tak
-      <br /> tak
-      <br /> tak
-      <br /> tak
-      <br /> tak
-      <br /> tak
-      <br /> tak
-      <br /> tak
-      <br /> tak
-      <br /> tak
-      <br /> tak
-      <br /> tak
-      <br /> tak
-      <br /> tak
-      <br /> tak
-      <br /> tak
-      <br /> tak
-      <br /> tak
-      <br /> tak
-      <br /> tak
-      <br /> tak
-      <br /> tak
-      <br /> tak
-      <br /> tak
-      <br /> tak
-      <br /> tak
-      <br /> tak
-      <br /> tak
-      <br /> tak
-      <br /> tak
-      <br /> tak
-      <br /> tak
-      <br /> tak
+      <div className="startPage__box">
+        <div className="box__image">
+          <img src={data.photos.author} alt="Author selfie" />
+        </div>
+        <div>jakies teksty</div>
+      </div>
     </div>
   );
 }

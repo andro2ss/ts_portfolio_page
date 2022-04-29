@@ -51,7 +51,8 @@ function App() {
             <Navigation pageText={pageText} userLang={userLang} />
             <main className="app__content">
               <Routes>
-                <Route path="/" element={<Start />} />;
+                <Route path="/" element={<Start data={pageText[userLang]} />} />
+                ;
                 <Route path="/aboutMe" element={<AboutMe />} />;
                 <Route path="/cv" element={<Cv />} />;
                 <Route path="/portfolio" element={<Portfolio />} />;
