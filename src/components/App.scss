@@ -34,9 +34,17 @@
     border: $color-1 1px solid;
 
     animation: fadeIn;
-    animation-duration: 1s;
+    animation-duration: 800ms;
   }
 
+  .animation--exit {
+    animation: zoomOut;
+    animation-duration: 500ms;
+  }
+
+  .hide{
+    display: none;
+  }
 
 
   &__content {

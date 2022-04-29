@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { setUserLanguage } from "../../reducers/userLanguage";
 import { useDispatch } from "react-redux";
 import "./Navigation.scss";
@@ -13,6 +13,7 @@ function Navigation({ pageText, userLang }: any) {
   }
 
   const dispatch = useDispatch();
+  let navigate = useNavigate();
 
   function buttonOnClick() {
     if (userLang === 0) {
@@ -46,15 +47,15 @@ function Navigation({ pageText, userLang }: any) {
               }
               return (
                 <li className="list__item" key={item.name}>
-                  <Link
-                    to={item.page}
+                  <button
+                    // to={item.page}
                     className={tempClassName}
                     onClick={(e) => {
-                      linkOnClick(e);
+                      linkOnClick(e, navigate, item.page);
                     }}
                   >
                     {item.name}
-                  </Link>
+                  </button>
                   <span className="item__separator"> / </span>
                 </li>
               );
