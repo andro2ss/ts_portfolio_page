@@ -1,0 +1,43 @@
+@import "../../style/colors.scss";
+@import "../../style/variables.scss";
+
+.contact__box{
+ text-align: center;
+
+ h3{
+  font-size: 2rem;
+ }
+ h4{
+  font-size: 1.4rem;
+ }
+
+ .box__items{
+  display: flex;
+  margin-bottom: 3rem;
+  flex-direction: column;
+  @media only screen and (min-width: $media-min-width) {
+ flex-direction: row;
+ justify-content: space-around;
+
+}
+ }
+
+ .item{
+   a{
+    text-decoration: none;
+    color: $color-text-1;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+   &:hover{
+    color: $color-text-3;
+   }
+    span{
+     margin-left: 1rem;
+    }
+   }
+  }
+ }
+

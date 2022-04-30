@@ -11,7 +11,7 @@ import Start from "../pages/start/Start";
 import Portfolio from "../pages/portfolio";
 import Skills from "../pages/Skills";
 import AboutMe from "../pages/aboutMe/AboutMe";
-import Contact from "../pages/contact";
+import Contact from "../pages/contact/contact";
 import { FooterGitHubProject } from "./footerGhProject/FooterGitHubProject";
 import Navigation from "./nav/Navigation";
 import { WebsiteContent } from "../models/WebsiteContent";
