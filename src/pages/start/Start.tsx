@@ -1,12 +1,13 @@
 import React, { useEffect, useRef } from "react";
 import Typed from "typed.js";
 import "./Start.scss";
+import { WebsiteContent } from "../models/WebsiteContent";
 
-function Start({ data }: any) {
+function Start(props: { data: WebsiteContent }) {
   const el: any = useRef(null);
   useEffect(() => {
     const typed = new Typed(el.current, {
-      strings: data.startText.authorDesc,
+      strings: props.data.startText.authorDesc,
       startDelay: 0,
       typeSpeed: 80,
       backSpeed: 20,
@@ -24,17 +25,17 @@ function Start({ data }: any) {
     <div className="content__container">
       <div className="startPage__box">
         <div className="box__image">
-          <img src={data.photos.author} alt="Author selfie" />
+          <img src={props.data.photos.author} alt="Author selfie" />
         </div>
         <div className="box__text">
           <h2>
-            {data.startText.headerTxt}{" "}
-            <span>{data.startText.headerAuthor}</span>
+            {props.data.startText.headerTxt}{" "}
+            <span>{props.data.startText.headerAuthor}</span>
           </h2>
           <h3>
             <span ref={el}></span>
           </h3>
-          <span>{data.startText.motto}</span>
+          <span>{props.data.startText.motto}</span>
         </div>
       </div>
     </div>
