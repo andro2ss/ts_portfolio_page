@@ -1,7 +1,7 @@
 import React from "react";
 
-function Cv({ data }: any) {
+function Skills({ data }: any) {
   return <div className="content__container">CV</div>;
 }
 
-export default Cv;
+export default Skills;

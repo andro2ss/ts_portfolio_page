@@ -9,7 +9,7 @@ import { pageTextInterface, setPageText } from "../reducers/pageText";
 import CatLoader from "./common/loaders/cat/CatLoader";
 import Start from "../pages/start/Start";
 import Portfolio from "../pages/portfolio";
-import Cv from "../pages/Cv";
+import Skills from "../pages/Skills";
 import AboutMe from "../pages/aboutMe/AboutMe";
 import Contact from "../pages/contact";
 import { FooterGitHubProject } from "./footerGhProject/FooterGitHubProject";
@@ -63,7 +63,7 @@ function App() {
                 ;
                 <Route
                   path="/skills"
-                  element={<Cv data={pageText[userLang]} />}
+                  element={<Skills data={pageText[userLang]} />}
                 />
                 ;
                 <Route
