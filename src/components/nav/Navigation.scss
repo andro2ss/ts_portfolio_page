@@ -1,4 +1,5 @@
 @import "../../style/colors.scss";
+@import "../../style/variables.scss";
 
 @mixin absolutePos{
   top: 0;
@@ -25,7 +26,7 @@
   }
 }
 
-@media only screen and (max-width: 674px) {
+@media only screen and (max-width: $media-max-width) {
   .app__header{
     margin-bottom: 4rem;
     position: sticky;
@@ -151,8 +152,7 @@
 
   }
 }
-
-@media only screen and (min-width: 675px) {
+@media only screen and (min-width: $media-min-width) {
   .app__header {
     position: sticky;
     top: 0;

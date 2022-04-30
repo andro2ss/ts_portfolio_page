@@ -1,5 +1,6 @@
 import React from "react";
-import { WebsiteContent } from "../models/WebsiteContent";
+import "./AboutMe.scss";
+import { WebsiteContent } from "../../models/WebsiteContent";
 
 function AboutMe(props: { data: WebsiteContent }) {
   return (

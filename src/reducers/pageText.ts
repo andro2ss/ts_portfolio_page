@@ -1,3 +1,5 @@
+import { WebsiteContent } from "../models/WebsiteContent";
+
 export const pageText = (state: any = "", action: any) => {
   switch (action.type) {
     case "SetPageText":
@@ -8,7 +10,7 @@ export const pageText = (state: any = "", action: any) => {
 };
 
 export interface pageTextInterface {
-  pageText: any;
+  pageText: WebsiteContent[];
 }
 
 export const setPageText = (value: any) => {

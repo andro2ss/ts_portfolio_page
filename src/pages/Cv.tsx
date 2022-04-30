@@ -1,6 +1,6 @@
 import React from "react";
 
-function Cv() {
+function Cv({ data }: any) {
   return <div className="content__container">CV</div>;
 }
 

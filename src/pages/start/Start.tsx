@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import Typed from "typed.js";
 import "./Start.scss";
-import { WebsiteContent } from "../models/WebsiteContent";
+import { WebsiteContent } from "../../models/WebsiteContent";
 
 function Start(props: { data: WebsiteContent }) {
   const el: any = useRef(null);

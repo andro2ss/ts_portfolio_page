@@ -1,24 +1,27 @@
 import React from "react";
 import "./App.scss";
 import { useDispatch, useSelector } from "react-redux";
-import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { setUserLanguage, userLang } from "../reducers/userLanguage";
 import { collection, onSnapshot } from "firebase/firestore";
 import db from "../firebase";
 import { pageTextInterface, setPageText } from "../reducers/pageText";
 import CatLoader from "./common/loaders/cat/CatLoader";
-import Start from "../pages/Start";
+import Start from "../pages/start/Start";
 import Portfolio from "../pages/portfolio";
 import Cv from "../pages/Cv";
-import AboutMe from "../pages/AboutMe";
+import AboutMe from "../pages/aboutMe/AboutMe";
 import Contact from "../pages/contact";
 import { FooterGitHubProject } from "./footerGhProject/FooterGitHubProject";
 import Navigation from "./nav/Navigation";
+import { WebsiteContent } from "../models/WebsiteContent";
 
 function App() {
   const dispatch = useDispatch();
   const userLang = useSelector((state: userLang) => state.userLanguage);
-  const pageText = useSelector((state: pageTextInterface) => state.pageText);
+  const pageText: WebsiteContent[] = useSelector(
+    (state: pageTextInterface) => state.pageText
+  );
 
   if (pageText.length === 0) {
     onSnapshot(collection(db, `pageContent`), (snapshot: any) => {
@@ -53,10 +56,26 @@ function App() {
               <Routes>
                 <Route path="/" element={<Start data={pageText[userLang]} />} />
                 ;
-                <Route path="/aboutMe" element={<AboutMe />} />;
-                <Route path="/cv" element={<Cv />} />;
-                <Route path="/portfolio" element={<Portfolio />} />;
-                <Route path="/contact" element={<Contact />} />;
+                <Route
+                  path="/aboutMe"
+                  element={<AboutMe data={pageText[userLang]} />}
+                />
+                ;
+                <Route
+                  path="/skills"
+                  element={<Cv data={pageText[userLang]} />}
+                />
+                ;
+                <Route
+                  path="/portfolio"
+                  element={<Portfolio data={pageText[userLang]} />}
+                />
+                ;
+                <Route
+                  path="/contact"
+                  element={<Contact data={pageText[userLang]} />}
+                />
+                ;
               </Routes>
             </main>
           </BrowserRouter>
