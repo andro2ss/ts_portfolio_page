@@ -11,7 +11,12 @@ function Skills(props: { data: WebsiteContent }) {
         data-aos="zoom-in-right"
         data-aos-anchor-placement="center-bottom"
       >
-        <span className="box__title">Języki programowania</span>
+        <span className="box__title">
+          <img
+            src={require("../assets/icons/programming.png")}
+            alt="Programming Icon"
+          />
+        </span>
         {props.data.skillsText.langProg.map((item) => {
           return (
             <li key={uniId()} className="box__item">
@@ -25,7 +30,12 @@ function Skills(props: { data: WebsiteContent }) {
         data-aos="zoom-in-right"
         data-aos-anchor-placement="center-bottom"
       >
-        <span className="box__title">Biblioteki</span>
+        <span className="box__title">
+          <img
+            src={require("../assets/icons/framework.png")}
+            alt="Frameworks Icon"
+          />
+        </span>
         {props.data.skillsText.frame.map((item) => {
           return (
             <li key={uniId()} className="box__item">
@@ -39,7 +49,10 @@ function Skills(props: { data: WebsiteContent }) {
         data-aos="zoom-in-right"
         data-aos-anchor-placement="center-bottom"
       >
-        <span className="box__title">IDE</span>
+        <span className="box__title">
+          {" "}
+          <img src={require("../assets/icons/ide.png")} alt="IDE Icon" />
+        </span>
 
         {props.data.skillsText.ide.map((item) => {
           return (
@@ -54,7 +67,13 @@ function Skills(props: { data: WebsiteContent }) {
         data-aos="zoom-in-right"
         data-aos-anchor-placement="center-bottom"
       >
-        <span className="box__title">Systemy operacyjne</span>
+        <span className="box__title">
+          {" "}
+          <img
+            src={require("../assets/icons/operative-system.png")}
+            alt="Operation System Icon"
+          />
+        </span>
         {props.data.skillsText.sys.map((item) => {
           return (
             <li key={uniId()} className="box__item">
@@ -68,7 +87,9 @@ function Skills(props: { data: WebsiteContent }) {
         data-aos="zoom-in-right"
         data-aos-anchor-placement="center-bottom"
       >
-        <span className="box__title">Inne</span>
+        <span className="box__title">
+          <img src={require("../assets/icons/file.png")} alt="Other Icon" />
+        </span>
         {props.data.skillsText.other.map((item) => {
           return (
             <li key={uniId()} className="box__item">
@@ -82,7 +103,12 @@ function Skills(props: { data: WebsiteContent }) {
         data-aos="zoom-in-right"
         data-aos-anchor-placement="center-bottom"
       >
-        <span className="box__title">Języki</span>
+        <span className="box__title">
+          <img
+            src={require("../assets/icons/languages.png")}
+            alt="Languages Icon"
+          />
+        </span>
         {props.data.skillsText.lang.map((items) => {
           return (
             <li key={uniId()} className="box__item">

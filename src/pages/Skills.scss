@@ -5,7 +5,7 @@
 .skills {
   &__box {
     background: $color-bg-1;
-    padding: 3rem;
+    padding: 4rem 2rem;
     @include mainContainer;
     position: relative;
     max-width: 400px;
@@ -34,8 +34,9 @@
         left: 50%;
         transform: translate(-50%, -50%);
         padding: 1rem;
-        background: $color-bg-2;
-        border: $color-1 2px solid;
+        background: inherit;
+        border-left: $color-1 2px solid;
+        border-right: $color-1 2px solid;
         border-radius: 1rem;
       }
 
