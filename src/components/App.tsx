@@ -8,7 +8,7 @@ import db from "../firebase";
 import { pageTextInterface, setPageText } from "../reducers/pageText";
 import CatLoader from "./common/loaders/cat/CatLoader";
 import Start from "../pages/start/Start";
-import Portfolio from "../pages/portfolio";
+import Portfolio from "../pages/portfolio/portfolio";
 import Skills from "../pages/skills/Skills";
 import AboutMe from "../pages/aboutMe/AboutMe";
 import Contact from "../pages/contact/contact";
