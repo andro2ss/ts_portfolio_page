@@ -1,7 +1,8 @@
 import React from "react";
 import "./Skills.scss";
-import { WebsiteContent } from "../models/WebsiteContent";
-import uniId from "../helpers/UniqeID";
+import { WebsiteContent } from "../../models/WebsiteContent";
+import uniId from "../../helpers/UniqeID";
+import Rating from "@mui/material/Rating";
 
 function Skills(props: { data: WebsiteContent }) {
   return (
@@ -13,7 +14,7 @@ function Skills(props: { data: WebsiteContent }) {
       >
         <span className="box__title">
           <img
-            src={require("../assets/icons/programming.png")}
+            src={require("../../assets/icons/programming.png")}
             alt="Programming Icon"
           />
         </span>
@@ -32,7 +33,7 @@ function Skills(props: { data: WebsiteContent }) {
       >
         <span className="box__title">
           <img
-            src={require("../assets/icons/framework.png")}
+            src={require("../../assets/icons/framework.png")}
             alt="Frameworks Icon"
           />
         </span>
@@ -51,7 +52,7 @@ function Skills(props: { data: WebsiteContent }) {
       >
         <span className="box__title">
           {" "}
-          <img src={require("../assets/icons/ide.png")} alt="IDE Icon" />
+          <img src={require("../../assets/icons/ide.png")} alt="IDE Icon" />
         </span>
 
         {props.data.skillsText.ide.map((item) => {
@@ -70,7 +71,7 @@ function Skills(props: { data: WebsiteContent }) {
         <span className="box__title">
           {" "}
           <img
-            src={require("../assets/icons/operative-system.png")}
+            src={require("../../assets/icons/operative-system.png")}
             alt="Operation System Icon"
           />
         </span>
@@ -88,7 +89,7 @@ function Skills(props: { data: WebsiteContent }) {
         data-aos-anchor-placement="center-bottom"
       >
         <span className="box__title">
-          <img src={require("../assets/icons/file.png")} alt="Other Icon" />
+          <img src={require("../../assets/icons/file.png")} alt="Other Icon" />
         </span>
         {props.data.skillsText.other.map((item) => {
           return (
@@ -105,17 +106,28 @@ function Skills(props: { data: WebsiteContent }) {
       >
         <span className="box__title">
           <img
-            src={require("../assets/icons/languages.png")}
+            src={require("../../assets/icons/languages.png")}
             alt="Languages Icon"
           />
         </span>
-        {props.data.skillsText.lang.map((items) => {
-          return (
-            <li key={uniId()} className="box__item">
-              {items.name} {items.lvl}
-            </li>
-          );
-        })}
+        {props.data.skillsText.lang
+          .sort((a, b) => {
+            return b.lvl - a.lvl;
+          })
+          .map((items) => {
+            return (
+              <li key={uniId()} className="box__item">
+                {items.name}{" "}
+                <Rating
+                  name="read-only"
+                  value={items.lvl}
+                  readOnly
+                  size="small"
+                  max={6}
+                />
+              </li>
+            );
+          })}
       </ul>
     </div>
   );

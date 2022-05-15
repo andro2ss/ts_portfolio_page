@@ -1,6 +1,6 @@
-@import "../style/colors.scss";
-@import "../style/variables.scss";
-@import "../style/mixin.scss";
+@import "../../style/colors";
+@import "../../style/variables";
+@import "../../style/mixin";
 
 .skills {
   &__box {
@@ -46,8 +46,16 @@
         margin: 0.5rem;
         border: $color-2 2px dashed;
         border-radius: 1rem;
+        display: flex;
+        align-items: center;
+        column-gap: 0.4rem;
+        text-align: center;
         &:hover{
           border: $color-3 2px solid;
+          color: $color-text-3;
+        }
+
+        span{
           color: $color-text-3;
         }
       }
