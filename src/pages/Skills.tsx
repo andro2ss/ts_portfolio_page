@@ -7,8 +7,8 @@ function Skills(props: { data: WebsiteContent }) {
   return (
     <div className="content__container">
       <ul
-        className="skills__box skills__box--left"
-        data-aos="zoom-in-right"
+        className="skills__box skills__box--center"
+        data-aos="fade-up"
         data-aos-anchor-placement="center-bottom"
       >
         <span className="box__title">
@@ -26,8 +26,8 @@ function Skills(props: { data: WebsiteContent }) {
         })}
       </ul>
       <ul
-        className="skills__box skills__box--center"
-        data-aos="zoom-in-right"
+        className="skills__box skills__box--right"
+        data-aos="fade-left"
         data-aos-anchor-placement="center-bottom"
       >
         <span className="box__title">
@@ -45,8 +45,8 @@ function Skills(props: { data: WebsiteContent }) {
         })}
       </ul>
       <ul
-        className="skills__box skills__box--right"
-        data-aos="zoom-in-right"
+        className="skills__box skills__box--center"
+        data-aos="fade-up"
         data-aos-anchor-placement="center-bottom"
       >
         <span className="box__title">
@@ -63,8 +63,8 @@ function Skills(props: { data: WebsiteContent }) {
         })}
       </ul>
       <ul
-        className="skills__box skills__box--center"
-        data-aos="zoom-in-right"
+        className="skills__box skills__box--left"
+        data-aos="fade-right"
         data-aos-anchor-placement="center-bottom"
       >
         <span className="box__title">
@@ -83,8 +83,8 @@ function Skills(props: { data: WebsiteContent }) {
         })}
       </ul>
       <ul
-        className="skills__box skills__box--left"
-        data-aos="zoom-in-right"
+        className="skills__box skills__box--center"
+        data-aos="fade-up"
         data-aos-anchor-placement="center-bottom"
       >
         <span className="box__title">
@@ -99,8 +99,8 @@ function Skills(props: { data: WebsiteContent }) {
         })}
       </ul>
       <ul
-        className="skills__box skills__box--center"
-        data-aos="zoom-in-right"
+        className="skills__box skills__box--right"
+        data-aos="fade-left"
         data-aos-anchor-placement="center-bottom"
       >
         <span className="box__title">
