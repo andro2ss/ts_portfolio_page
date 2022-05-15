@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./App.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -15,8 +15,15 @@ import Contact from "../pages/contact/contact";
 import { FooterGitHubProject } from "./footerGhProject/FooterGitHubProject";
 import Navigation from "./nav/Navigation";
 import { WebsiteContent } from "../models/WebsiteContent";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function App() {
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  }, []);
+
   const dispatch = useDispatch();
   const userLang = useSelector((state: userLang) => state.userLanguage);
   const pageText: WebsiteContent[] = useSelector(

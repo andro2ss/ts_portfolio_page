@@ -1,36 +1,13 @@
 @import "../../style/colors.scss";
 @import "../../style/variables.scss";
-
-@mixin absolutePos{
-  top: 0;
-  left: 0;
-  position: absolute;
-}
-
-@mixin navBtn{
-  all: unset;
-  cursor: pointer;
-  position: absolute;
-  display: block;
-  background: transparent;
-
-  img {
-    width: 1.5rem;
-    height: 1.5rem;
-    transition-duration: 500ms;
-
-    &:hover {
-      width: 2rem;
-      height: 2rem;
-    }
-  }
-}
+@import "../../style/mixin.scss";
 
 @media only screen and (max-width: $media-max-width) {
   .app__header{
     margin-bottom: 4rem;
     position: sticky;
     top: 0;
+    z-index: 10;
   }
 
   #menu {
@@ -164,7 +141,7 @@
     width: 100%;
     border-bottom: $color-1 2px solid;
     background: radial-gradient(circle, $color-gradient-1 0%, $color-gradient-2 100%);
-
+    z-index: 10;
 
     .header {
       &__list {

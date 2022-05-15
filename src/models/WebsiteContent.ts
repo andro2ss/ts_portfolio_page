@@ -17,7 +17,7 @@ export interface WebsiteContent {
     lang: {
       name: string;
       lvl: number;
-    };
+    }[];
     langProg: string[];
     other: string[];
     sys: string[];

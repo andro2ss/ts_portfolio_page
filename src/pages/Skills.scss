@@ -1,0 +1,55 @@
+@import "../style/colors.scss";
+@import "../style/variables.scss";
+@import "../style/mixin.scss";
+
+.skills {
+  &__box {
+    background: $color-bg-1;
+    padding: 3rem;
+    @include mainContainer;
+    position: relative;
+    max-width: 400px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 100px auto;
+    @media only screen and (min-width: $media-min-width) {
+
+      &--left {
+        margin: 100px auto 50px 50px;
+      }
+
+      &--center {
+        margin: 100px auto;
+      }
+      &--right {
+        margin: 100px 50px 50px auto;
+      }
+    }
+    .box{
+      &__title{
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 1rem;
+        background: $color-bg-2;
+        border: $color-1 2px solid;
+        border-radius: 1rem;
+      }
+
+      &__item{
+        list-style: none;
+        padding: 1rem;
+        margin: 0.5rem;
+        border: $color-2 2px dashed;
+        border-radius: 1rem;
+        &:hover{
+          border: $color-3 2px solid;
+          color: $color-text-3;
+        }
+      }
+    }
+  }
+}
