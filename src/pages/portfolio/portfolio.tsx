@@ -29,7 +29,12 @@ function Portfolio(props: { data: WebsiteContent }) {
           })
           .map((portfolioProject) => {
             return (
-              <div className="portfolio__box" key={portfolioProject.name}>
+              <div
+                className="portfolio__box"
+                key={portfolioProject.name}
+                data-aos="flip-up"
+                data-aos-anchor-placement="center-bottom"
+              >
                 {portfolioProject.photo.length > 1 ? (
                   <img
                     src={portfolioProject.photo}
