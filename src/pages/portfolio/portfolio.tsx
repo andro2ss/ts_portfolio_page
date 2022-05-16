@@ -42,15 +42,20 @@ function Portfolio(props: { data: WebsiteContent }) {
                     className="box__img"
                   />
                 ) : (
-                  ""
+                  <div className="box__img--empty">
+                    <img
+                      src={require("../../assets/techIcon/image.png")}
+                      alt="No photo icon"
+                    />
+                  </div>
                 )}
                 <div className="box__desc">
                   <h3>{portfolioProject.name}</h3>
-                  <h4>
+                  <div className="desc__content">
                     {portfolioProject.tech.map((tech) => {
                       return <span key={uniqeID()}>{tech}</span>;
                     })}
-                  </h4>
+                  </div>
                   <div className="box__anchors">
                     <a href={portfolioProject.github} target="_blank">
                       <img

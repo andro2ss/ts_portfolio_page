@@ -2,41 +2,45 @@
 @import "../../style/mixin.scss";
 @import "../../style/colors.scss";
 
-.customColor{
+.customColor {
   color: $color-text-3;
 }
 
 .portfolio {
-  &__filter{
-    .filter{
-      &__container{
+  &__filter {
+    .filter {
+      &__container {
         background: inherit;
         color: $color-text-3;
       }
-      &__content{
+
+      &__content {
         display: flex;
         flex-direction: column;
         align-items: center;
       }
-      &__boxes{
+
+      &__boxes {
         display: flex;
         flex-wrap: wrap;
         column-gap: 0.5rem;
         row-gap: 0.5rem;
         margin-bottom: 1rem;
 
-        span{
+        span {
           padding: 0.5rem 1rem;
           border: $color-1 solid 1px;
           cursor: pointer;
           color: $color-text-1;
           border-radius: 1rem;
-          &:hover{
-          background: $color-shadow;
+
+          &:hover {
+            background: $color-shadow;
             color: $color-text-3;
           }
         }
-        .selected{
+
+        .selected {
           background: $color-shadow;
           color: $color-text-2;
           border: $color-2 solid 1px;
@@ -44,28 +48,31 @@
       }
     }
 
-    button{
+    button {
       max-width: 400px;
       width: 100%;
       color: $color-text-3;
       border-color: $color-1;
       margin-top: 1rem;
-      &:hover{
+
+      &:hover {
         border-color: $color-2;
       }
     }
   }
+
   &__boxes {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    column-gap: 1rem;
-    row-gap: 1rem;
+    column-gap: 2rem;
+    row-gap: 3rem;
     padding: 5% 3%;
     width: 100%;
   }
-  &__box{
+
+  &__box {
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -73,45 +80,80 @@
     width: 100%;
     @include mainContainer;
 
-    .box{
-      &__img{
+    .box {
+      &__img {
         width: 100%;
-        max-height: 130px;
+        height: 130px;
+        border-bottom: 1px solid $color-1;
         object-fit: cover;
+
+        &--empty {
+          display: flex;
+          width: 100%;
+          height: 130px;
+          justify-content: center;
+          align-items: center;
+          border-bottom: 1px solid $color-1;
+
+          img {
+            width: 96px;
+            height: 96px;
+          }
+        }
       }
 
-      &__desc{
+      &__desc {
         padding: 1rem;
         text-align: center;
 
-        h3{
+        h3 {
           font-size: 1.5rem;
           padding-bottom: 1rem;
           margin: 0;
           border-bottom: 1px dotted $color-1;
         }
-        h4{
-          margin: 0;
+
+        .desc__content {
           margin-top: 1rem;
           padding-bottom: 1rem;
           border-bottom: 1px dotted $color-1;
           display: flex;
           flex-wrap: wrap;
           justify-content: center;
+          align-items: center;
+          align-content: center;
+          height: 180px;
+          overflow-y: scroll;
 
-          span{
+          &::-webkit-scrollbar {
+            width: 3px;
+          }
+
+          &::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+          }
+
+          &::-webkit-scrollbar-thumb {
+            background-color: $color-1;
+            //outline: 1px solid slategrey;
+          }
+
+          span {
+            height: fit-content;
+            display: block;
             padding: 0.2rem 0.5rem;
-            margin: 0.4rem;
+            margin: 0.3rem;
             border-right: 1px dotted $color-1;
             border-left: 1px dotted $color-1;
           }
         }
       }
 
-      &__anchors{
+      &__anchors {
         margin-top: 1rem;
         display: flex;
         justify-content: space-around;
+
         img {
           width: 48px;
           height: 48px;
