@@ -45,12 +45,16 @@ function Portfolio(props: { data: WebsiteContent }) {
                         alt="Github icon"
                       />
                     </a>
-                    <a href={portfolioProject.live} target="_blank">
-                      <img
-                        src={require("../../assets/techIcon/file.png")}
-                        alt="Demo view icon"
-                      />
-                    </a>
+                    {portfolioProject.live.length > 1 ? (
+                      <a href={portfolioProject.live} target="_blank">
+                        <img
+                          src={require("../../assets/techIcon/file.png")}
+                          alt="Demo view icon"
+                        />
+                      </a>
+                    ) : (
+                      ""
+                    )}
                   </div>
                 </div>
               </div>
