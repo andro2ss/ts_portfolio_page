@@ -30,7 +30,15 @@ function Portfolio(props: { data: WebsiteContent }) {
           .map((portfolioProject) => {
             return (
               <div className="portfolio__box" key={portfolioProject.name}>
-                <img src={portfolioProject.photo} alt="" className="box__img" />
+                {portfolioProject.photo.length > 1 ? (
+                  <img
+                    src={portfolioProject.photo}
+                    alt="Project print-screen"
+                    className="box__img"
+                  />
+                ) : (
+                  ""
+                )}
                 <div className="box__desc">
                   <h3>{portfolioProject.name}</h3>
                   <h4>
