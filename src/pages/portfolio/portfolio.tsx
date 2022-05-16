@@ -1,122 +1,61 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { WebsiteContent } from "../../models/WebsiteContent";
 import "./portfolio.scss";
+import uniqeID from "../../helpers/UniqeID";
+import FilterSection from "./items/FilterSection";
 
 function Portfolio(props: { data: WebsiteContent }) {
+  const [filter, setFilter] = useState<string[]>([]);
+  useEffect(() => {}, [filter]);
+
   return (
     <div className="content__container">
-      <section>Filtry</section>
+      <section className="portfolio__filter">
+        <FilterSection setFilter={setFilter} data={props.data} />
+      </section>
       <section className="portfolio__boxes">
-        <div className="portfolio__box">
-          <img src="" alt="" className="box__img" />
-          <div className="box__desc">
-            <h3>NG Todos List</h3>
-            <h4>Angular TS SCSS MUI</h4>
-            <div className="box__anchors">
-              <span>Github</span>
-              <span>Demo</span>
-            </div>
-          </div>
-        </div>
-        <div className="portfolio__box">
-          <img src="" alt="" className="box__img" />
-          <div className="box__desc">
-            <h3>NG Todos List</h3>
-            <h4>Angular TS SCSS MUI</h4>
-            <div className="box__anchors">
-              <span>Github</span>
-              <span>Demo</span>
-            </div>
-          </div>
-        </div>
-        <div className="portfolio__box">
-          <img src="" alt="" className="box__img" />
-          <div className="box__desc">
-            <h3>NG Todos List</h3>
-            <h4>Angular TS SCSS MUI</h4>
-            <div className="box__anchors">
-              <span>Github</span>
-              <span>Demo</span>
-            </div>
-          </div>
-        </div>
-        <div className="portfolio__box">
-          <img src="" alt="" className="box__img" />
-          <div className="box__desc">
-            <h3>NG Todos List</h3>
-            <h4>Angular TS SCSS MUI</h4>
-            <div className="box__anchors">
-              <span>Github</span>
-              <span>Demo</span>
-            </div>
-          </div>
-        </div>
-        <div className="portfolio__box">
-          <img src="" alt="" className="box__img" />
-          <div className="box__desc">
-            <h3>NG Todos List</h3>
-            <h4>Angular TS SCSS MUI</h4>
-            <div className="box__anchors">
-              <span>Github</span>
-              <span>Demo</span>
-            </div>
-          </div>
-        </div>
-        <div className="portfolio__box">
-          <img src="" alt="" className="box__img" />
-          <div className="box__desc">
-            <h3>NG Todos List</h3>
-            <h4>Angular TS SCSS MUI</h4>
-            <div className="box__anchors">
-              <span>Github</span>
-              <span>Demo</span>
-            </div>
-          </div>
-        </div>
-        <div className="portfolio__box">
-          <img src="" alt="" className="box__img" />
-          <div className="box__desc">
-            <h3>NG Todos List</h3>
-            <h4>Angular TS SCSS MUI</h4>
-            <div className="box__anchors">
-              <span>Github</span>
-              <span>Demo</span>
-            </div>
-          </div>
-        </div>
-        <div className="portfolio__box">
-          <img src="" alt="" className="box__img" />
-          <div className="box__desc">
-            <h3>NG Todos List</h3>
-            <h4>Angular TS SCSS MUI</h4>
-            <div className="box__anchors">
-              <span>Github</span>
-              <span>Demo</span>
-            </div>
-          </div>
-        </div>
-        <div className="portfolio__box">
-          <img src="" alt="" className="box__img" />
-          <div className="box__desc">
-            <h3>NG Todos List</h3>
-            <h4>Angular TS SCSS MUI</h4>
-            <div className="box__anchors">
-              <span>Github</span>
-              <span>Demo</span>
-            </div>
-          </div>
-        </div>
-        <div className="portfolio__box">
-          <img src="" alt="" className="box__img" />
-          <div className="box__desc">
-            <h3>NG Todos List</h3>
-            <h4>Angular TS SCSS MUI</h4>
-            <div className="box__anchors">
-              <span>Github</span>
-              <span>Demo</span>
-            </div>
-          </div>
-        </div>
+        {props.data.portfolioText
+          .filter((portfolioProject) => {
+            if (filter.length === 0) {
+              return true;
+            } else {
+              return filter.every((tech) => {
+                return portfolioProject.tech.includes(tech);
+              });
+            }
+          })
+          .sort((a, b) => {
+            return b.num - a.num;
+          })
+          .map((portfolioProject) => {
+            return (
+              <div className="portfolio__box" key={portfolioProject.name}>
+                <img src={portfolioProject.photo} alt="" className="box__img" />
+                <div className="box__desc">
+                  <h3>{portfolioProject.name}</h3>
+                  <h4>
+                    {portfolioProject.tech.map((tech) => {
+                      return <span key={uniqeID()}>{tech}</span>;
+                    })}
+                  </h4>
+                  <div className="box__anchors">
+                    <a href={portfolioProject.github} target="_blank">
+                      <img
+                        src={require("../../assets/techIcon/github.png")}
+                        alt="Github icon"
+                      />
+                    </a>
+                    <a href={portfolioProject.live} target="_blank">
+                      <img
+                        src={require("../../assets/techIcon/file.png")}
+                        alt="Demo view icon"
+                      />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
       </section>
     </div>
   );

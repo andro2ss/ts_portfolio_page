@@ -1,4 +1,60 @@
+@import "../../style/variables.scss";
+@import "../../style/mixin.scss";
+@import "../../style/colors.scss";
+
+.customColor{
+  color: $color-text-3;
+}
+
 .portfolio {
+  &__filter{
+    .filter{
+      &__container{
+        background: inherit;
+        color: $color-text-3;
+      }
+      &__content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      &__boxes{
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 0.5rem;
+        row-gap: 0.5rem;
+        margin-bottom: 1rem;
+
+        span{
+          padding: 0.5rem 1rem;
+          border: $color-1 solid 1px;
+          cursor: pointer;
+          color: $color-text-1;
+          border-radius: 1rem;
+          &:hover{
+          background: $color-shadow;
+            color: $color-text-3;
+          }
+        }
+        .selected{
+          background: $color-shadow;
+          color: $color-text-2;
+          border: $color-2 solid 1px;
+        }
+      }
+    }
+
+    button{
+      max-width: 400px;
+      width: 100%;
+      color: $color-text-3;
+      border-color: $color-1;
+      margin-top: 1rem;
+      &:hover{
+        border-color: $color-2;
+      }
+    }
+  }
   &__boxes {
     display: flex;
     flex-wrap: wrap;
@@ -13,28 +69,53 @@
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    border-radius: 1rem;
     max-width: 260px;
     width: 100%;
-    border: 1px solid red;
+    @include mainContainer;
 
     .box{
       &__img{
-        max-width: 260px;
         width: 100%;
-        min-height: 130px;
-        height: 100%;
-        background: red;
-
+        max-height: 130px;
+        object-fit: cover;
       }
 
       &__desc{
         padding: 1rem;
+        text-align: center;
+
+        h3{
+          font-size: 1.5rem;
+          padding-bottom: 1rem;
+          margin: 0;
+          border-bottom: 1px dotted $color-1;
+        }
+        h4{
+          margin: 0;
+          margin-top: 1rem;
+          padding-bottom: 1rem;
+          border-bottom: 1px dotted $color-1;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+
+          span{
+            padding: 0.2rem 0.5rem;
+            margin: 0.4rem;
+            border-right: 1px dotted $color-1;
+            border-left: 1px dotted $color-1;
+          }
+        }
       }
 
       &__anchors{
+        margin-top: 1rem;
         display: flex;
         justify-content: space-around;
+        img {
+          width: 48px;
+          height: 48px;
+        }
       }
     }
   }
