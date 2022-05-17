@@ -19,7 +19,7 @@ function Start(props: { data: WebsiteContent }) {
     return () => {
       typed.destroy();
     };
-  }, []);
+  }, [props.data]);
 
   return (
     <div className="content__container">

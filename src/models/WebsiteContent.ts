@@ -1,7 +1,12 @@
 export interface WebsiteContent {
   id: string;
   nav: string[];
-  common: { filters: string; search: string };
+  common: {
+    filters: string;
+    search: string;
+    noProject: string;
+    projectAmount: string;
+  };
   photos: { author: string };
   startText: StartText;
   aboutMeText: AboutMeText;
