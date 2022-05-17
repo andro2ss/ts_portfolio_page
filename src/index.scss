@@ -10,6 +10,22 @@ body {
     background-color: $color-bg-2;
     color: $color-text-1;
     font-family: $font-common;
+
+    &::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: $color-1;
+        border-radius: 4px;
+        &:hover{
+            background-color: $color-2;
+        }
+    }
 }
 
 * {
