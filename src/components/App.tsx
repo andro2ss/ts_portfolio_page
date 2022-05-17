@@ -39,11 +39,13 @@ function App() {
       );
     });
 
-    if (userLang === 99 && localStorage["userLanguage"]) {
+    if (!localStorage["userLanguage"]) {
+      localStorage.setItem("userLanguage", "1");
+    }
+
+    if (userLang === 99) {
       const local = localStorage.getItem("userLanguage");
       dispatch(setUserLanguage(Number(local)));
-    } else {
-      localStorage.setItem("userLanguage", "1");
     }
   }
 
