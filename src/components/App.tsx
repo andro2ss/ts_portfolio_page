@@ -3,8 +3,7 @@ import "./App.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { setUserLanguage, userLang } from "../reducers/userLanguage";
-import { collection, onSnapshot } from "firebase/firestore";
-import db from "../firebase";
+import { collection, getFirestore, onSnapshot } from "firebase/firestore";
 import { pageTextInterface, setPageText } from "../reducers/pageText";
 import CatLoader from "./common/loaders/cat/CatLoader";
 import Start from "../pages/start/Start";
@@ -17,13 +16,17 @@ import Navigation from "./nav/Navigation";
 import { WebsiteContent } from "../models/WebsiteContent";
 import AOS from "aos";
 import "aos/dist/aos.css";
-
+import { initializeApp } from "firebase/app";
+import { firebaseConfig } from "../firebase/firebaseConfig";
 function App() {
   useEffect(() => {
     AOS.init();
     AOS.refresh();
   }, []);
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore();
   const dispatch = useDispatch();
   const userLang = useSelector((state: userLang) => state.userLanguage);
   const pageText: WebsiteContent[] = useSelector(
