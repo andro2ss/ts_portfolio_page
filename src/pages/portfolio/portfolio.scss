@@ -139,9 +139,9 @@
           flex-wrap: wrap;
           justify-content: center;
           align-items: center;
-          align-content: center;
+          align-content: stretch;
           height: 180px;
-          overflow-y: scroll;
+          overflow-y: auto;
 
           &::-webkit-scrollbar {
             width: 3px;
