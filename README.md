@@ -39,4 +39,4 @@ $ npm start
 
 ## App website
 
-### [Portfolio Page AB](https://a-brzeski.pl/)
+### [Portfolio Page AB](https://abrzeski.pl/)
